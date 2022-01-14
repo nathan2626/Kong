@@ -21,7 +21,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::post('/dashboard', '\App\Http\Controllers\DashboardController@createPost');
+Route::post('/timeline', '\App\Http\Controllers\DashboardController@createPost');
 
 //Route::post('/welcome', '\App\Http\Controllers\DashboardController@createPost');
 
@@ -31,9 +31,7 @@ Route::get('/user', function () {
 Route::post('/user', '\App\Http\Controllers\DashboardController@editUser');
 Route::get('/user/delete/{id}', '\App\Http\Controllers\DashboardController@delete')->middleware(['auth']);
 
-Route::get('/timeline', function () {
-    return view('timeline');
-});
+Route::get('/timeline', '\App\Http\Controllers\DashboardController@index')->name('timeline');
 
 Route::get('/legalmentions', function () {
     return view('legalmentions');

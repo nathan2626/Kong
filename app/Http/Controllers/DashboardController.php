@@ -28,8 +28,8 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('home', [
-            'posts' => Post::get()
+        return view('timeline', [
+            'posts' => Post::get()->sortByDesc('id')
         ]);
     }
 
@@ -39,7 +39,7 @@ class DashboardController extends Controller
 
         auth()->user()->posts()->create(['body' => $request->body]);
 
-        return redirect(route('dashboard'));
+        return redirect(route('timeline'));
     }
 
     public function editUser(Request $request)

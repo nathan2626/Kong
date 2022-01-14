@@ -131,26 +131,29 @@
         class="flex items-center w-full px-4 py-12  lg:w-1/2 sm:px-6 lg:px-8 sm:py-16 lg:py-24 lg:h-screen lg:items-center"
     >
         <div class="max-w-lg mx-auto text-center lg:text-left lg:pr-12">
-            <form method="POST" enctype="multipart/form-data" action="{{  url('contact') }}">
+            <form method="post" class="mb-4" wire:submit.prevent="createPost">
                 @csrf
-                <div class="relative mb-4">
-                    <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-                    <textarea id="message" name="message" class="w-full bg-white  border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+        
+                <div class="form-group">
+                    <textarea name="body" id="body" cols="30" rows="3" class="form-control @error('body') is-invalid @enderror" wire:model="body"></textarea>
+                    @error('body')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                    @enderror
                 </div>
-                <button class="text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-grey-600 text-lg" type="submit">Envoyer</button>
+                <button type="submit"  class="bg-gray-100 hover:bg-blue-dark font-bold py-2 px-4 rounded">
+                    Create
+                </button>
             </form>
         </div>
     </div>
 
     <div class="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-auto">
-        <a
-            class="block p-4 bg-white border border-gray-100 shadow-sm rounded-xl"
-            href=""
-        >
-            <p class="text-xs font-medium text-gray-500">Lorem, ipsum.</p>
+        @foreach ($posts as $post)
+        <a class="block p-4 bg-white border border-gray-100 shadow-sm rounded-xl" href="">
+             <p class="text-xs font-medium text-gray-500"> {{ $post->user->name }}</p>
 
             <h5 class="mt-1 text-xl font-bold text-gray-900">
-                Lorem ipsum dolor sit amet consectetur.
+                {{ mb_strimwidth($post->body, 0, 35, "..."); }}
             </h5>
             <dl class="flex items-center mt-4 space-x-8">
                 <div class="flex items-center">
@@ -170,7 +173,7 @@
                     <span
                         class="flex ml-3 space-x-1 space-x-reverse text-sm font-medium text-gray-600 "
                     >
-                <dt>Full time</dt>
+                <dt>{{ $post->likes }} {{ $post->likes > 1 ? 'likes' : 'like' }}</dt>
                 <dd class="sr-only">Employment type</dd>
               </span>
                 </div>
@@ -192,12 +195,14 @@
                     <span
                         class="flex ml-3 space-x-1 space-x-reverse text-sm font-medium text-gray-600 "
                     >
-                <dt>Points</dt>
-                <dd class="order-first">100</dd>
+                <dt>{{ $post->comments > 1 ? 'comments' : 'comment' }}</dt>
+                <dd class="order-first">{{ $post->comments }} </dd>
               </span>
                 </div>
             </dl>
         </a>
+
+        @endforeach
 
     </div>
 </section>

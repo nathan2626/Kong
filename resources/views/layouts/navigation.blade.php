@@ -9,7 +9,7 @@
                     @if (Route::has('login'))
                         @auth
                             <a href="/timeline">Timeline</a>
-                            <a href="">Legal Mentions</a>
+                            <a href="/legalmentions">Legal Mentions</a>
                         @else
                             <a href="/legalmentions">Legal Mentions</a>
                         @endauth

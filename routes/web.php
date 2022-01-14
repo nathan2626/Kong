@@ -23,6 +23,8 @@ Route::get('/dashboard', function () {
 
 Route::post('/dashboard', '\App\Http\Controllers\DashboardController@createPost');
 
+//Route::post('/welcome', '\App\Http\Controllers\DashboardController@createPost');
+
 Route::get('/user', function () {
     return view('userForm');
 });

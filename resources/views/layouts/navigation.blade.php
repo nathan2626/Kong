@@ -1,3 +1,6 @@
+<head>    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
 <header class="text-white bg-gray-900">
     <div class="px-4 mx-auto sm:pr-0 max-w-screen-2xl">
         <div class="flex items-center justify-between h-16">
@@ -24,7 +27,7 @@
 
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/admin') }}" class="inline-flex items-center h-16 px-12 text-xs font-bold tracking-widest text-black-900 uppercase bg-yellow-500">Mon Compte</a>
+                        <a href="{{ url('/dashboard') }}" class="inline-flex items-center h-16 px-12 text-xs font-bold tracking-widest text-black-900 uppercase bg-yellow-500">Mon Compte</a>
                         <x-dropdown align="right" width="48">
                             <x-slot name="trigger">
 

@@ -5,13 +5,13 @@
                 <span class="w-20 h-10 bg-gray-600 rounded-lg"></span>
 
                 <nav class="hidden space-x-8 text-sm font-medium lg:flex">
-                    <a href="">Home</a>
+                    <a href="/">Home</a>
                     @if (Route::has('login'))
                         @auth
-                            <a href="">Timeline</a>
+                            <a href="/timeline">Timeline</a>
                             <a href="">Legal Mentions</a>
                         @else
-                            <a href="">Legal Mentions</a>
+                            <a href="/legalmentions">Legal Mentions</a>
                         @endauth
                     @endif
 

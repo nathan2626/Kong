@@ -46,8 +46,9 @@
                <span
                    class="flex ml-3 space-x-1 space-x-reverse text-sm font-medium text-gray-600 "
                >
-           <dt>{{ $post->comments > 1 ? 'comments' : 'comment' }}</dt>
-           <dd class="order-first">{{ $post->comments }} </dd>
+           {{-- <dt>{{ $post->comments > 1 ? 'comments' : 'comment' }}</dt>
+           <dd class="order-first">{{ $post->comments }} </dd> --}}
+           <livewire:comments>
          </span>
            </div>
        </dl>

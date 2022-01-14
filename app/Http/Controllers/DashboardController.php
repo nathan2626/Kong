@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Comment;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +30,8 @@ class DashboardController extends Controller
     public function index()
     {
         return view('timeline', [
-            'posts' => Post::get()->sortByDesc('id')
+            'posts' => Post::get()->sortByDesc('id'),
+            'comments' => Comment::get()->sortByDesc('id')
         ]);
     }
 

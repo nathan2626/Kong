@@ -1,4 +1,4 @@
-<div>
+<div class="max-w-lg mx-auto text-center lg:text-left lg:pr-12">
     <form method="post" class="mb-4" wire:submit.prevent="createPost">
         @csrf
 

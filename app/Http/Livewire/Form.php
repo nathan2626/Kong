@@ -15,9 +15,7 @@ class Form extends Component
 
         $post = auth()->user()->posts()->create(['body' => $this->body]);
 
-//        $this->emit('postAdded', $post->id);
-        broadcast(new PostAdded($post));
-
+        $this->emit('postAdded', $post->id);
 
         $this->body = "";
     }

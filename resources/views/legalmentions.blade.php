@@ -11,4 +11,3 @@
 @extends('layouts.navigation')
 </body>
 </html>
-

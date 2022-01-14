@@ -71,9 +71,9 @@
 
 
                 @endif
-                {{--
                                         <a class="inline-block py-2 px-4 text-white no-underline" href="{{ url('/admin') }}">Mon Compte</a>
-                --}}
+
+
 
 
 

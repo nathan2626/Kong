@@ -27,6 +27,7 @@ class UserSeeder extends Seeder
                 'image' => '1.png',
                 'password' => 'Test1'
             ]);
+            
         }
     }
 }

@@ -26,6 +26,7 @@ class PostSeeder extends Seeder
                 'user_id' => 1,
                 'likes' => 43
             ]);
+            
         }
     }
 }

@@ -1,3 +1,20 @@
+<<<<<<< HEAD
+@extends('layouts.navigation')
+
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Timeline') }}
+        </h2>
+    </x-slot>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
+                    You're logged in!
+                </div>
+=======
 <!doctype html>
 <html lang="en">
 <head>
@@ -94,6 +111,7 @@
                         <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
                     </svg>
                 </button>
+>>>>>>> 4c497c323467b16c72ed2620ba1c4040626358c1
             </div>
         </div>
     </div>

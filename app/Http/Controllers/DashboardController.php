@@ -35,6 +35,21 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function showDashboard($id)
+    {
+        $user = User::find($id)->get();
+
+        if($user) {
+
+            return view('dashboard', [
+                'user' => User::where('id', $id)->find($id)
+            ]);
+
+        }
+    
+    }
+    
+
     public function createPost(Request $request)
     {
         $request->validate(['body' => 'required|min:6']);
@@ -57,7 +72,7 @@ class DashboardController extends Controller
                 $request->validate([
                     'image' => 'mimes:jpeg,bmp,png'
                 ]);
-//                dd($request['image_confirmation']);
+                //dd($request['image_confirmation']);
                 $imageName = $user['id'].'.'.$request['image_confirmation']->extension();
 
                 $request['image_confirmation']->move(public_path().'/imgs/', $imageName);

@@ -38,7 +38,7 @@
 
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="inline-flex items-center h-16 px-12 text-xs font-bold tracking-widest text-black-900 uppercase bg-yellow-500">Mon Compte</a>
+                        <a href="{{ route('dashboard', Auth::user()->id) }}" class="inline-flex items-center h-16 px-12 text-xs font-bold tracking-widest text-black-900 uppercase bg-yellow-500">Mon Compte</a>
                         <x-dropdown align="right" width="48">
                             <x-slot name="trigger">
 

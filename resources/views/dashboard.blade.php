@@ -63,8 +63,8 @@
                             class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
 
                             <li class="flex items-center py-3">
-                                <span>Member since</span>
-                                <span class="ml-auto">Nov 07, 2016</span>
+                                <span>Membre depuis</span>
+                                <span class="ml-auto">{{ $user->created_at->diffForHumans() }}</span>
                             </li>
                         </ul>
                     </div>
@@ -92,38 +92,22 @@
                         <div class="text-gray-700">
                             <div class="grid md:grid-cols-2 text-sm">
                                 <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">First Name</div>
-                                    <div class="px-4 py-2">Jane</div>
+                                    <div class="px-4 py-2 font-semibold">Nom</div>
+                                    <div class="px-4 py-2">{{ $user->name }}</div>
                                 </div>
                                 <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Last Name</div>
-                                    <div class="px-4 py-2">Doe</div>
+                                    <div class="px-4 py-2 font-semibold">ID</div>
+                                    <div class="px-4 py-2">{{ $user->id }}</div>
                                 </div>
                                 <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Gender</div>
-                                    <div class="px-4 py-2">Female</div>
-                                </div>
-                                <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Contact No.</div>
-                                    <div class="px-4 py-2">+11 998001001</div>
-                                </div>
-                                <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Current Address</div>
-                                    <div class="px-4 py-2">Beech Creek, PA, Pennsylvania</div>
-                                </div>
-                                <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Permanant Address</div>
-                                    <div class="px-4 py-2">Arlington Heights, IL, Illinois</div>
-                                </div>
-                                <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Email.</div>
+                                    <div class="px-4 py-2 font-semibold">Email</div>
                                     <div class="px-4 py-2">
-                                        <a class="text-blue-800" href="mailto:jane@example.com">jane@example.com</a>
+                                        <a class="text-blue-800" href="mailto:jane@example.com">{{ $user->email }}</a>
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Birthday</div>
-                                    <div class="px-4 py-2">Feb 06, 1998</div>
+                                    <div class="px-4 py-2 font-semibold">Membre depuis</div>
+                                    <div class="px-4 py-2">{{ $user->created_at->diffForHumans() }}</div>
                                 </div>
                             </div>
                         </div>

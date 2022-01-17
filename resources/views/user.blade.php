@@ -93,7 +93,7 @@
                             <div class="grid md:grid-cols-2 text-sm">
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">First Name</div>
-                                    <div class="px-4 py-2">{{ $user->name }}</div>
+                                    <div class="px-4 py-2">Jane</div>
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">Last Name</div>
@@ -118,7 +118,7 @@
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">Email.</div>
                                     <div class="px-4 py-2">
-                                        <a class="text-blue-800" href="mailto:jane@example.com">{{ $user->email }}</a>
+                                        <a class="text-blue-800" href="mailto:jane@example.com">jane@example.com</a>
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-2">

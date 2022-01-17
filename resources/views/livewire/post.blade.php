@@ -1,6 +1,6 @@
 <div class="block p-4 bg-white border border-gray-100 shadow-sm rounded-xl">
 
-  <a href="/user-info/{{ $post->user->id }}" class="text-xs font-medium text-gray-500">{{ $post->user->name }}</a>
+  <a href="/user-info/{{ $post->user->id }}" class="text-xs font-medium text-gray-500">{{ $post->user->firstname }}</a>
 
  <h5 class="mt-1 text-xl font-bold text-gray-900">
      {{ mb_strimwidth($post->body, 0, 35, "..."); }}

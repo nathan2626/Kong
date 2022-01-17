@@ -35,6 +35,13 @@ class DashboardController extends Controller
         ]);
     }
 
+    public function home()
+    {
+        return view('welcome', [
+            'user' => User::find(Auth::user()->id)
+        ]);
+    }
+
     public function showDashboard($id)
     {
         $user = User::find($id)->get();

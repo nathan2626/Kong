@@ -54,11 +54,8 @@
                                  src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg"
                                  alt="">
                         </div>
-                        <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">Jane Doe</h1>
-                        <h3 class="text-gray-600 font-lg text-semibold leading-6">Owner at Her Company Inc.</h3>
-                        <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">Lorem ipsum dolor sit amet
-                            consectetur adipisicing elit.
-                            Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non deserunt</p>
+                        <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">{{ $user->firstname }} {{ $user->lastname }}</h1>
+                        <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">{{ $user->bio }}</p>
                         <ul
                             class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
 
@@ -93,37 +90,29 @@
                             <div class="grid md:grid-cols-2 text-sm">
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">First Name</div>
-                                    <div class="px-4 py-2">{{ $user->name }}</div>
+                                    <div class="px-4 py-2">{{ $user->firstname }}</div>
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">Last Name</div>
-                                    <div class="px-4 py-2">Doe</div>
+                                    <div class="px-4 py-2">{{ $user->lastname }}</div>
                                 </div>
                                 <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Gender</div>
-                                    <div class="px-4 py-2">Female</div>
-                                </div>
-                                <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Contact No.</div>
-                                    <div class="px-4 py-2">+11 998001001</div>
-                                </div>
-                                <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Current Address</div>
-                                    <div class="px-4 py-2">Beech Creek, PA, Pennsylvania</div>
-                                </div>
-                                <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Permanant Address</div>
-                                    <div class="px-4 py-2">Arlington Heights, IL, Illinois</div>
-                                </div>
-                                <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Email.</div>
+                                    <div class="px-4 py-2 font-semibold">Email</div>
                                     <div class="px-4 py-2">
                                         <a class="text-blue-800" href="mailto:jane@example.com">{{ $user->email }}</a>
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-2">
-                                    <div class="px-4 py-2 font-semibold">Birthday</div>
-                                    <div class="px-4 py-2">Feb 06, 1998</div>
+                                    <div class="px-4 py-2 font-semibold">ID</div>
+                                    <div class="px-4 py-2">
+                                        <a class="text-blue-800" href="mailto:jane@example.com">{{ $user->id }}</a>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-2">
+                                    <div class="px-4 py-2 font-semibold">Membre depuis</div>
+                                    <div class="px-4 py-2">
+                                        <a class="text-blue-800" href="mailto:jane@example.com">{{ $user->created_at->diffForHumans()}}</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

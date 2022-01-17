@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', '\App\Http\Controllers\DashboardController@home')->middleware(['auth'])->name('home');
 Route::get('/dashboard/{id}', '\App\Http\Controllers\DashboardController@showDashboard')->middleware(['auth'])->name('dashboard');
 Route::post('/timeline', '\App\Http\Controllers\DashboardController@createPost');
 Route::get('/user', function () {

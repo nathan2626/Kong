@@ -21,7 +21,7 @@ class PostSeeder extends Seeder
             $token = md5(uniqid(true));
 
             DB::table('posts')->insert([
-                'body' => $faker->paragraph,
+                'body' => $faker->paragraph(1),
                 'image' => '1.png',
                 'user_id' => 1,
                 'likes' => 43

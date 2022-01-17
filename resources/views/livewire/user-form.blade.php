@@ -1,8 +1,8 @@
-<div>
+<div data-aos="fade-left">
     <form action="" wire:submit.prevent="save">
         <div wire:loading>Chargement</div>
         <div class="field">
-            <label for="name" class="label">Name</label>
+            <label for="firstname" class="label">Name</label>
             <div class="control">
                 <input type="text" name="" id="" wire:model.defer="user.name" class="input">
             </div>

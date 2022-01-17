@@ -27,59 +27,24 @@
 
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ route('dashboard', Auth::user()->id) }}" class="inline-flex items-center h-16 px-12 text-xs font-bold tracking-widest text-black-900 uppercase bg-yellow-500">Mon Compte</a>
-                        <x-dropdown align="right" width="48">
-                            <x-slot name="trigger">
+                        {{-- <a href="{{ route('dashboard', Auth::user()->id) }}" class="relative inline-block px-4 py-2 font-medium group">
+                            <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                            <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                            <span class="relative text-black group-hover:text-white">Mon Compte</span>
+                        </a> --}}
+                        <a href="{{ route('dashboard', Auth::user()->id) }}" class="inline-flex items-center h-16 px-6 text-xs font-bold tracking-widest text-black-900 uppercase bg-yellow-500">Mon Compte</a>
+                        
+                        <button class="inline-flex items-center h-16 px-6 text-xs font-bold tracking-widest text-black-900 uppercase bg-yellow-500">
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
 
-                                <button class="flex items-center text-sm font-medium text-black-500 hover:text-black hover:border-black-300 focus:outline-none focus:text-black-700 focus:border-gray-300 transition duration-150 ease-in-out">
-
-
-                                    <div class="ml-1">
-                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
-                                </button>
-                            </x-slot>
-
-                            <x-slot name="trigger">
-
-                                <button class="flex items-center text-sm font-medium text-black-500 hover:text-black hover:border-black-300 focus:outline-none focus:text-black-700 focus:border-gray-300 transition duration-150 ease-in-out">
-
-                                    <form method="POST" action="{{ route('logout') }}">
-                                        @csrf
-
-                                        <a :href="route('logout')"
-                                           onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                            {{ __('Log Out') }}
-                                        </a>
-                                    </form>
-
-
-                                    <div class="ml-1">
-                                        <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                        </svg>
-                                    </div>
-                                </button>
-                            </x-slot>
-
-                            <x-slot name="content">
-                                <!-- Authentication -->
-                                <form method="POST" action="{{ route('logout') }}">
-                                    @csrf
-
-                                    <x-dropdown-link :href="route('logout')"
-                                                     onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                        {{ __('Log Out') }}
-                                    </x-dropdown-link>
-                                </form>
-                            </x-slot>
-
-                        </x-dropdown>
-
+                                <a :href="route('logout')"
+                                onclick="event.preventDefault();
+                                        this.closest('form').submit();">
+                                    {{ __('Log Out') }}
+                                </a>
+                            </form>
+                        </button>
                     @else
                         <a class="inline-block py-2 px-4 text-white no-underline" href="{{ route('login') }}">Connexion</a>
                     @endauth
@@ -87,11 +52,6 @@
 
 
                 @endif
-                {{--
-                                        <a class="inline-block py-2 px-4 text-white no-underline" href="{{ url('/admin') }}">Mon Compte</a>
-                --}}
-
-
 
             </div>
 

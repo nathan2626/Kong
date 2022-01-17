@@ -20,11 +20,12 @@ class UserSeeder extends Seeder
         $token = md5(uniqid(true));
 
         DB::table('users')->insert([
-            'email' => "nathanjourno@yahoo.fr",
+            'email' => "adam.allouche97@gmail.com",
             'token' => $token,
-            'name' => 'nat',
+            'firstname' => 'Adam',
+            'lastname' => 'Allouche',
             'image' => '1.png',
-            'password' => Hash::make('Azertyuiop1')
+            'password' => Hash::make('Codibanks23')
         ]);
 
         for ($i = 0; $i < 10; $i++) {
@@ -32,11 +33,13 @@ class UserSeeder extends Seeder
             $token = md5(uniqid(true));
 
             DB::table('users')->insert([
+                'firstname' => $faker->firstname,
+                'lastname' => $faker->lastname,
                 'email' => $faker->email,
-                'token' => $token,
-                'name' => $faker->username,
-                'image' => '1.png',
-                'password' => 'Test1'
+                'bio' => $faker->realText($maxNbChars = 200, $indexSize = 2),
+                'image' => imageUrl($width = 640, $height = 480),
+                'password' => 'Test1',
+                'token' => $token
             ]);
             
         }

@@ -5,9 +5,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <title>Nom de l'utilisateur</title>
     @livewireStyles
@@ -100,8 +101,13 @@
     
 </x-app-layout>
 
+<script>
+    AOS.init();
+</script>
 @livewireScripts
+
 </body>
+
 </html>
 
 

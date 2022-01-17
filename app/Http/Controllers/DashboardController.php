@@ -48,6 +48,21 @@ class DashboardController extends Controller
         }
     
     }
+    public function showUser($id)
+    {
+        $user = User::find($id)->get();
+
+        if($user) {
+
+            return view('user', [
+                'user' => User::where('id', $id)->find($id)
+            ]);
+
+        }
+    
+    }
+
+
     
 
     public function createPost(Request $request)

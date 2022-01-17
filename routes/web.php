@@ -17,22 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth'])->name('dashboard');
-
 Route::get('/dashboard/{id}', '\App\Http\Controllers\DashboardController@showDashboard')->middleware(['auth'])->name('dashboard');
-
-
 Route::post('/timeline', '\App\Http\Controllers\DashboardController@createPost');
-
-//Route::post('/welcome', '\App\Http\Controllers\DashboardController@createPost');
-
 Route::get('/user', function () {
-    return view('userForm');
+    return view('user');
 });
-Route::post('/user', '\App\Http\Controllers\DashboardController@editUser');
-Route::get('/user/delete/{id}', '\App\Http\Controllers\DashboardController@delete')->middleware(['auth']);
+Route::get('/user-info/{id}', '\App\Http\Controllers\DashboardController@showUser')->middleware(['auth'])->name('user-info');
+// Route::post('/user', '\App\Http\Controllers\DashboardController@editUser');
+// Route::get('/user/delete/{id}', '\App\Http\Controllers\DashboardController@delete')->middleware(['auth']);
 
 Route::get('/timeline', '\App\Http\Controllers\DashboardController@index')->name('timeline');
 

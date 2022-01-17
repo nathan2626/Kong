@@ -35,6 +35,7 @@
 
 
 <x-app-layout>
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
@@ -42,8 +43,6 @@
     </x-slot>
 
     <div class="bg-gray-100">
-
-        <!-- End of Navbar -->
 
         <div class="container mx-auto my-5 p-5">
             <div class="md:flex no-wrap md:-mx-2 ">
@@ -57,7 +56,6 @@
                                  alt="">
                         </div>
                         <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">Jane Doe</h1>
-                        <h3 class="text-gray-600 font-lg text-semibold leading-6">Owner at Her Company Inc.</h3>
                         <p class="text-sm text-gray-500 hover:text-gray-600 leading-6">Lorem ipsum dolor sit amet
                             consectetur adipisicing elit.
                             Reprehenderit, eligendi dolorum sequi illum qui unde aspernatur non deserunt</p>
@@ -66,7 +64,7 @@
 
                             <li class="flex items-center py-3">
                                 <span>Membre depuis</span>
-                                <span class="ml-auto">{{ $user->created_at->diffForHumans() }}</span>
+                                <span class="ml-auto">Nov 07, 2016</span>
                             </li>
                         </ul>
                     </div>
@@ -80,21 +78,33 @@
                 <div class="w-full md:w-9/12 mx-2 h-64">
                     <!-- Profile tab -->
                     <!-- About Section -->
-                    
+                    <div class="mt-10 sm:mt-0">
+                        <div class="md:grid md:grid-cols-3 md:gap-6">
 
-                    <livewire:user-profile :user="$user">
+                            <div class="mt-5 md:mt-0 md:col-span-2">
+                                <livewire:user-profile :user="$user">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of about section -->
 
+                    <div class="my-4"></div>
 
+                    <!-- Experience and education -->
+
+                    <!-- End of profile tab -->
                 </div>
             </div>
         </div>
     </div>
-
+    
 </x-app-layout>
 
 @livewireScripts
 </body>
 </html>
+
+
 
 
 

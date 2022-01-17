@@ -4,12 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Cog\Contracts\Love\Reactable\Models\Reactable as ReactableInterface;
-use Cog\Laravel\Love\Reactable\Models\Traits\Reactable;
 
-class Comment extends Model implements ReactableInterface
+class Comment extends Model
 {
-    use HasFactory, Reactable;
+    use HasFactory;
 
     protected $fillable = ['body'];
 

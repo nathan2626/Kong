@@ -9,9 +9,11 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link href="../css/app.css" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="https://cdn.tailwindcss.com" defer></script>
         <script src="../path/to/@themesberg/flowbite/dist/flowbite.bundle.js" defer></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="https://unpkg.com/@themesberg/flowbite@1.3.0/dist/flowbite.bundle.js" defer></script>
 
     </head>
@@ -71,9 +73,9 @@
                 @yield('content')
             </main>
 
-            {{-- <script>
+            <script>
                 AOS.init();
-            </script> --}}
+            </script>
             @livewireScripts
 
     </body>

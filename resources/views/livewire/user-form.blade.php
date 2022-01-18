@@ -1,54 +1,22 @@
 <div data-aos="fade-left">
-    <form action="" wire:submit.prevent="save">
-        <div wire:loading>Chargement</div>
-        <div class="field">
-            <label for="firstname" class="label">Name</label>
-            <div class="control">
-                <input type="text" name="" id="" wire:model.defer="user.name" class="input">
-            </div>
-            @error('user.name')
-                <span class="help is-danger">{{ $message }}</span>
-            @enderror
-        </div>
-        <div class="buttons">
-            <button class="button is-primary" type="submit">Sauvegarder</button>
-        </div>
-    </form>
-    <form action="" wire:submit.prevent="save">
-        <div wire:loading>Chargement</div>
-        <div class="field">
-            <label for="email" class="label">Email</label>
-            <div class="control">
-                <input type="text" name="" id="" wire:model.defer="user.email" class="input">
-            </div>
-            @error('user.email')
-                <span class="help is-danger">{{ $message }}</span>
-            @enderror
-        </div>
-        <div class="buttons">
-            <button class="button is-primary" type="submit">Sauvegarder</button>
-        </div>
-    </form>
 
-
-
-    <form action="#" method="POST">
+    <form action="#" wire:submit.prevent="save">
         <div class="shadow overflow-hidden sm:rounded-md">
             <div class="px-4 py-5 bg-white sm:p-6">
                 <div class="grid grid-cols-6 gap-6">
                     <div class="col-span-6 sm:col-span-3">
-                        <label for="first-name" class="block text-sm font-medium text-gray-700">Prénom</label>
-                        <input type="text" name="first-name" id="first-name" autocomplete="given-name" placeholder="{{ $user->firstname }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <label for="firstname" class="block text-sm font-medium text-gray-700">Prénom</label>
+                        <input type="text" name="" id="" wire:model.defer="user.firstname" autocomplete="given-name" placeholder="{{ $user->firstname }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
 
                     <div class="col-span-6 sm:col-span-3">
                         <label for="last-name" class="block text-sm font-medium text-gray-700">Nom</label>
-                        <input type="text" name="last-name" id="last-name" autocomplete="family-name" placeholder="{{ $user->lastname }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" name="last-name" id="last-name" wire:model.defer="user.lastname" autocomplete="family-name" placeholder="{{ $user->lastname }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
 
                     <div class="col-span-6 sm:col-span-4">
                         <label for="email-address" class="block text-sm font-medium text-gray-700">Email</label>
-                        <input type="text" name="email-address" id="email-address" autocomplete="email" placeholder="{{ $user->email }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
+                        <input type="text" name="email-address" id="email-address" wire:model.defer="user.email" autocomplete="email" placeholder="{{ $user->email }}" class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
 
                     <div class="col-span-6 sm:col-span-3">
@@ -56,7 +24,7 @@
                             Biography
                         </label>
                         <div class="mt-1">
-                            <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="{{ $user->bio }}"></textarea>
+                            <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md" placeholder="{{ $user->bio }}" wire:model.defer="user.bio"></textarea>
                         </div>
 
                     </div>

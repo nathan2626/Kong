@@ -10,8 +10,10 @@ class UserForm extends Component
     public $user;
 
     protected $rules = [
-        'user.name' => 'required|string|min:4',
-        'user.email' => 'required|string|min:10'
+        'user.firstname' => 'required|string',
+        'user.lastname' => 'required|string',
+        'user.email' => 'required|string|min:10',
+        'user.bio' => 'required|string|min:10'
     ];
 
     public function save()

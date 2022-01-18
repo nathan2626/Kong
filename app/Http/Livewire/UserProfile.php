@@ -27,6 +27,11 @@ class UserProfile extends Component
     {
         $this->editId = $id;
     }
+
+    public function editUser($user)
+    {
+        
+    }
     
     public function render()
     {

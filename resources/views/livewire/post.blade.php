@@ -1,5 +1,6 @@
-<div class="block p-4 bg-white border border-gray-100 shadow-sm rounded-xl" >
-  <a href="/user-info/{$user->id}" class="text-xs font-medium text-gray-500">{{ $post->user->firstname}} {{$post->created_at->diffForHumans()}}</a>
+<div data-aos="fade-left" data-aos-duration="1500" class="block p-4 mt-4 bg-white border border-gray-100 shadow-sm rounded-xl" >
+  <a href="{{ url('/user-info/'.$post->user->id) }}" class=" font-medium text-blue-500">{{ $post->user->firstname}} </a>
+  <p class="text-xs font-medium text-slate-500">{{$post->created_at->diffForHumans()}}</p>
   <h5 class="mt-1 text-xl font-bold text-gray-900">
     {{ $post->body}}
   </h5>

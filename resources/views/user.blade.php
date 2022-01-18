@@ -1,11 +1,6 @@
+@extends('layouts.app')
+@section('content')
 
-
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
 
     <div class="bg-gray-100">
 
@@ -66,21 +61,19 @@
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">Email</div>
-                                    <div class="px-4 py-2">
-                                        <a class="text-blue-800" href="mailto:jane@example.com">{{ $user->email }}</a>
+                                    <div class="">
+                                        <div class="px-4 py-2">{{ $user->email }}</div>
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">ID</div>
                                     <div class="px-4 py-2">
-                                        <a class="text-blue-800" href="mailto:jane@example.com">{{ $user->id }}</a>
+                                        <div class="px-4 py-2">{{ $user->id }}</div>
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-2">
                                     <div class="px-4 py-2 font-semibold">Membre depuis</div>
-                                    <div class="px-4 py-2">
-                                        <a class="text-blue-800" href="mailto:jane@example.com">{{ $user->created_at->diffForHumans()}}</a>
-                                    </div>
+                                        <div class="px-4 py-2">{{ $user->created_at->diffForHumans()}}</div>
                                 </div>
                             </div>
                         </div>
@@ -96,10 +89,9 @@
             </div>
         </div>
     </div>
-</x-app-layout>
 
-</body>
-</html>
+
+
 
 
 

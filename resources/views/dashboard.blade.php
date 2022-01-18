@@ -1,38 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <title>Nom de l'utilisateur</title>
-    @livewireStyles
-
-</head>
-<style>
-    :root {
-        --main-color: #4a76a8;
-    }
-
-    .bg-main-color {
-        background-color: var(--main-color);
-    }
-
-    .text-main-color {
-        color: var(--main-color);
-    }
-
-    .border-main-color {
-        border-color: var(--main-color);
-    }
-</style>
-
-<body>
+@extends('layouts.app')
 
 
 <x-app-layout>
@@ -101,14 +67,6 @@
     
 </x-app-layout>
 
-<script>
-    AOS.init();
-</script>
-@livewireScripts
-
-</body>
-
-</html>
 
 
 

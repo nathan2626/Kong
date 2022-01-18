@@ -1,8 +1,10 @@
-<div class="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-auto">
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
     @foreach ($posts as $post)
 
-    <livewire:post :post="$post" :key="$post->id"/>
 
+    <livewire:post :post="$post" :key="$post->id"/>
+    
     
     @endforeach
+  
 </div>

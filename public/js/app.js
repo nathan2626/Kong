@@ -2526,7 +2526,7 @@ function isBooleanAttr(attrName) {
   return booleanAttributes.includes(attrName);
 }
 function attributeShouldntBePreservedIfFalsy(name) {
-  return !["aria-pressed", "aria-checked", "aria-expanded"].includes(name);
+  return !["aria-pressed", "aria-checked", "aria-expanded", "aria-selected"].includes(name);
 }
 function getBinding(el, name, fallback) {
   if (el._x_bindings && el._x_bindings[name] !== void 0)
@@ -2646,7 +2646,7 @@ var Alpine = {
   get raw() {
     return raw;
   },
-  version: "3.8.0",
+  version: "3.8.1",
   flushAndStopDeferringMutations,
   disableEffectScheduling,
   setReactivityEngine,

@@ -1,6 +1,6 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 #message-text {
     border: 3px solid darkblue;
@@ -9,6 +9,7 @@
 body {
     background-color: #111827;
 }
+
 #text-input-textarea {
     focus: outline-none;
 }
@@ -25,32 +26,30 @@ body.modal-active {
     overflow-x: hidden;
     overflow-y: visible !important;
 }
-.wrapper {
-    height: 100vh;
-    /*This part is important for centering*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+textarea {
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+:root {
+    --main-color: #4a76a8;
 }
 
-.typing-demo {
-    width: 22ch;
-    animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid;
-    font-family: monospace;
-    font-size: 2em;
+.bg-main-color {
+    background-color: var(--main-color);
 }
 
-@keyframes typing {
-    from {
-        width: 0;
-    }
+.text-main-color {
+    color: var(--main-color);
 }
 
-@keyframes blink {
-    50% {
-        border-color: transparent;
-    }
+.border-main-color {
+    border-color: var(--main-color);
+}
+
+.timeline {
+    padding-top: 5rem;
+    padding-bottom: 1rem;
 }

@@ -31,7 +31,17 @@ class DashboardController extends Controller
     {
         return view('timeline', [
             'posts' => Post::get()->sortByDesc('id'),
-            'comments' => Comment::get()->sortByDesc('id')
+            'comments' => Comment::get()->sortByDesc('id'),
+            'user' => User::find(Auth::user()->id)
+        ]);
+    }
+
+    public function layout()
+    {
+        return view('layouts.navigation', [
+            'posts' => Post::get()->sortByDesc('id'),
+            'comments' => Comment::get()->sortByDesc('id'),
+            'user' => User::find(Auth::user()->id)
         ]);
     }
 
@@ -42,17 +52,11 @@ class DashboardController extends Controller
         ]);
     }
 
-    public function showDashboard($id)
+    public function showDashboard()
     {
-        $user = User::find($id)->get();
-
-        if($user) {
-
             return view('dashboard', [
-                'user' => User::where('id', $id)->find($id)
+                'user' => User::find(Auth::user()->id)
             ]);
-
-        }
     
     }
     public function showUser($id)

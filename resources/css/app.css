@@ -1,7 +1,6 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 #message-text {
     border: 3px solid darkblue;
@@ -10,9 +9,9 @@
 body {
     background-color: #111827;
 }
-#text-input-textarea {
 
-    focus:outline-none
+#text-input-textarea {
+    focus: outline-none;
 }
 
 #post-card {
@@ -20,11 +19,37 @@ body {
     background-color: aqua;
 }
 
-
- .modal {
-     transition: opacity 0.25s ease;
- }
+.modal {
+    transition: opacity 0.25s ease;
+}
 body.modal-active {
     overflow-x: hidden;
     overflow-y: visible !important;
+}
+
+textarea {
+    border: none;
+    background-color: transparent;
+    resize: none;
+    outline: none;
+}
+:root {
+    --main-color: #4a76a8;
+}
+
+.bg-main-color {
+    background-color: var(--main-color);
+}
+
+.text-main-color {
+    color: var(--main-color);
+}
+
+.border-main-color {
+    border-color: var(--main-color);
+}
+
+.timeline {
+    padding-top: 5rem;
+    padding-bottom: 1rem;
 }

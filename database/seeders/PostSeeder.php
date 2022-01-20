@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use App\Models\User;
 
 class PostSeeder extends Seeder
 {
@@ -17,14 +16,15 @@ class PostSeeder extends Seeder
     {
         $faker = \Faker\Factory::create();
 
-        for ($i = 0; $i < 20; $i++) {
+        for ($i = 0; $i < 10; $i++) {
 
             $token = md5(uniqid(true));
 
             DB::table('posts')->insert([
                 'body' => $faker->paragraph(1),
                 'image' => '1.png',
-                'user_id' => User::all()->random(1)->first()->id
+                'user_id' => 1,
+                'likes' => 43
             ]);
             
         }

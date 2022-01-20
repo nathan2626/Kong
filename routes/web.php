@@ -13,11 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/dashboard/{id}', '\App\Http\Controllers\DashboardController@showDashboard')->middleware(['auth'])->name('dashboard');
+Route::get('/', '\App\Http\Controllers\DashboardController@home')->middleware(['auth'])->name('home');
+Route::get('/dashboard', '\App\Http\Controllers\DashboardController@showDashboard')->middleware(['auth'])->name('dashboard');
 Route::post('/timeline', '\App\Http\Controllers\DashboardController@createPost');
 Route::get('/user', function () {
     return view('user');
@@ -27,7 +24,7 @@ Route::get('/user-info/{id}', '\App\Http\Controllers\DashboardController@showUse
 // Route::get('/user/delete/{id}', '\App\Http\Controllers\DashboardController@delete')->middleware(['auth']);
 
 Route::get('/timeline', '\App\Http\Controllers\DashboardController@index')->name('timeline');
-
+Route::post('/comments', '\App\Http\Controllers\CommentController@store')->name('comments.store');
 Route::get('/legalmentions', function () {
     return view('legalmentions');
 });

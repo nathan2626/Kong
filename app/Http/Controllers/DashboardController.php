@@ -31,21 +31,32 @@ class DashboardController extends Controller
     {
         return view('timeline', [
             'posts' => Post::get()->sortByDesc('id'),
-            'comments' => Comment::get()->sortByDesc('id')
+            'comments' => Comment::get()->sortByDesc('id'),
+            'user' => User::find(Auth::user()->id)
         ]);
     }
 
-    public function showDashboard($id)
+    public function layout()
     {
-        $user = User::find($id)->get();
+        return view('layouts.navigation', [
+            'posts' => Post::get()->sortByDesc('id'),
+            'comments' => Comment::get()->sortByDesc('id'),
+            'user' => User::find(Auth::user()->id)
+        ]);
+    }
 
-        if($user) {
+    public function home()
+    {
+        return view('welcome', [
+            'user' => User::find(Auth::user()->id)
+        ]);
+    }
 
+    public function showDashboard()
+    {
             return view('dashboard', [
-                'user' => User::where('id', $id)->find($id)
+                'user' => User::find(Auth::user()->id)
             ]);
-
-        }
     
     }
     public function showUser($id)

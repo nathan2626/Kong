@@ -18,6 +18,7 @@ class CreatePostsTable extends Migration
             $table->timestamps();
             $table->string('body');
             $table->string('image')->nullable();
+            $table->bigInteger('likes')->default('0');;
             $table->foreignId('user_id')
                 ->constrained()
                 ->onDelete('cascade');

@@ -25,6 +25,8 @@ Route::get('/user-info/{id}', '\App\Http\Controllers\DashboardController@showUse
 
 Route::get('/timeline', '\App\Http\Controllers\DashboardController@index')->name('timeline');
 Route::post('/comments', '\App\Http\Controllers\CommentController@store')->name('comments.store');
+Route::get('/timeline/{id}', '\App\Http\Controllers\DashboardController@like');
+
 Route::get('/legalmentions', function () {
     return view('legalmentions');
 });

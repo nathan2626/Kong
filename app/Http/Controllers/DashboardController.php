@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Comment;
+use App\Models\Like;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -125,5 +126,41 @@ class DashboardController extends Controller
         else{
             return redirect(route('dashboard'));
         }
+    }
+
+    public function like($id)
+    {
+        $post = Post::where('id', $id)->first();
+        $user = Auth::user();
+
+        
+
+        $like = Like::where('user_id', $user->id)->where('post_id', $id)->get();
+
+        
+        if(count($like) == 0){
+
+            $post->likes++;
+            $post->save();
+            Like::create([
+                'user_id' => $user->id,
+                'post_id'=>$id,
+            ]);
+            return redirect(route('timeline'));
+
+
+        } else {
+
+            $post->likes--;
+            $post->save();
+            Like::where(
+                'user_id', $user->id)
+                ->where('post_id', $id)
+                ->delete();
+
+            return redirect(route('timeline'));
+
+        }
+
     }
 }

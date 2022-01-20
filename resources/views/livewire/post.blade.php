@@ -22,6 +22,7 @@
         <span
         class="flex ml-3 space-x-1 space-x-reverse text-sm font-medium text-gray-600 "
         >
+        <a href="/timeline/{{$post->id}}">❤️</a>
         <dt>{{ $post->likes }}</dt>
         <dd class="sr-only">Employment type</dd>
         </span>

@@ -22,8 +22,7 @@ class UserSeeder extends Seeder
         DB::table('users')->insert([
             'email' => "adam.allouche97@gmail.com",
             'token' => $token,
-            'firstname' => 'Adam',
-            'lastname' => 'Allouche',
+            'name' => 'Adam',
             'image' => '1.png',
             'password' => Hash::make('Codibanks23')
         ]);
@@ -33,8 +32,7 @@ class UserSeeder extends Seeder
             $token = md5(uniqid(true));
 
             DB::table('users')->insert([
-                'firstname' => $faker->firstname,
-                'lastname' => $faker->lastname,
+                'name' => $faker->name,
                 'email' => $faker->email,
                 'bio' => $faker->realText($maxNbChars = 200, $indexSize = 2),
                 'image' => imageUrl($width = 640, $height = 480),
